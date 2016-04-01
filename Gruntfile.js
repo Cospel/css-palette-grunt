@@ -38,11 +38,14 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     css_paletove_plugin: {
-        files: [{
-          src : ['css/base.css', 'css/*.css'],
-          dest : '/res/'
-        }],
-    },
+       default_options: {
+        options: {
+          base: 'css/base/base.css'
+        },
+        files: [
+             { src: ['css/palette/*.css'], dest: 'css/result' }
+        ]
+    }},
   });
 
   // Actually load this plugin's task(s).
