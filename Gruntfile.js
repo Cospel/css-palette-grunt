@@ -43,7 +43,7 @@ module.exports = function(grunt) {
           base: 'css/base/base.css'
         },
         files: [
-             { src: ['css/palette/*.css'], dest: 'css/result' }
+             { src: ['css/palette/*.css'], dest: 'css/result/' }
         ]
     }},
   });

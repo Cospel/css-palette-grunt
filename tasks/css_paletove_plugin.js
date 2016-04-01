@@ -23,8 +23,6 @@ module.exports = function(grunt) {
       base: 'base.css'
     });
 
-
-
     /*
      * Load file to string.
      */
@@ -128,15 +126,15 @@ module.exports = function(grunt) {
 
     // Main
     var baseContent = grunt.file.read(options.base);
-
     this.files.forEach(function (f) {
       var translations = [];
       f.src.forEach(function(filePath) {
           var content = get_paletove_css(options.base, filePath);
-          console.log(content);
-        //var fileContent = grunt.file.read(filePath);
-        //console.log(fileContent);
-           //grunt.file.write(f.dest, translations.join("\n");
+
+          // write result file
+          var path = filePath.split('/');
+          var name = f.dest + path[path.length-1];
+          grunt.file.write(name, content);
       });
     });                    
   });
