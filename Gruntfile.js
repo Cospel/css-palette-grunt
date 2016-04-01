@@ -22,6 +22,15 @@ module.exports = function(grunt) {
       }
     },
 
+    concat: {
+       dist: {
+           src: [
+            'js/lib/*.js', // All JS in the libs folder
+           ],
+           dest: 'js/build/production.js',
+       }
+    },
+
     // Before generating any new files, remove any previously-created files.
     clean: {
       tests: ['tmp']
@@ -29,29 +38,11 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     css_paletove_plugin: {
-      default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
-      },
-      custom_options: {
-        options: {
-      /*    separator: ': ',
-          punctuation: ' !!!'*/
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
-      }
+        files: [{
+          src : ['/base/base.css', '/palette/*.css'],
+          dest : '/res/'
+        }],
     },
-
-    // Unit tests.
-    //nodeunit: {
-    //  tests: ['test/*_test.js']
-    //}
-
   });
 
   // Actually load this plugin's task(s).
@@ -60,13 +51,13 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  //grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'css_paletove_plugin']);
+  grunt.registerTask('test', ['clean', 'concat', 'css_paletove_plugin']);
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('default', ['jshint', 'concat', 'css_paletove_plugin']);
 
 };

@@ -1,0 +1,21 @@
+p    {color: red}
+
+#header ul, textarea.input-sm {
+  display: -webkit-box;
+  display: flex;
+}
+
+#header ul {
+  display: -webkit-flex;
+  color: blue;
+}
+
+p    {font-style: italic }
+
+b    {color: red}
+
+h1 {text-indent: 30px}
+
+.form-inline .input-group>.form-control {
+    width: 100%
+}
