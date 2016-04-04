@@ -1,6 +1,6 @@
 # grunt-css_paletove_plugin
 
-> The best Grunt plugin ever.
+> The best Grunt plugin ever. Semantic diff with patch to css for grunt.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
