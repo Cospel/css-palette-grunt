@@ -1,4 +1,4 @@
-p    {color: red}
+p    {color: green}
 
 #header ul, textarea.input-sm {
   display: -webkit-box;
@@ -7,12 +7,12 @@ p    {color: red}
 
 #header ul {
   display: -webkit-flex;
-  color: blue;
+  color: green;
 }
 
 p    {font-style: italic }
 
-b    {color: red}
+b    {color: green}
 
 h1 {text-indent: 30px}
 

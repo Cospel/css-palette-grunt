@@ -7,7 +7,7 @@ p    {color: red}
 
 #header ul {
   display: -webkit-flex;
-  color: blue;
+  color: red;
 }
 
 p    {font-style: italic }
