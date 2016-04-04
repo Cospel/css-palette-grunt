@@ -2,8 +2,6 @@
  * grunt-css_paletove_plugin
  * -
  *
- * Copyright (c) 2016 Michal Lukac
- * Licensed under the MIT license.
  */
 
 'use strict';
